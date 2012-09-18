@@ -7,7 +7,7 @@ With the rise of social software and web applications, social tagging has
 become a popular method to organize collections. Tagging is a process where
 keywords (tags) are manually assigned to a resource for retrieval. In contrast
 to traditional subject indexing, keywords are generally chosen freely by users
-and shared in a community. Many forms and applications of social tagging exist
+and shared in a community. Many formsand applications of social tagging exist
 and are subject to research [4]. The outcome of activities in a tagging system
 is called a folksonomy. This paper presents the tagging systems of Stack
 Exchange and Wikipedia as two popular instances of folksonomies and summarizes
@@ -19,20 +19,21 @@ organization systems via crowdsourcing.
 No common definition of social tagging and folksonomies exists among authors
 and disciplines. As terms like social tagging, social indexing, and
 collaborative tagging are used interchangeably, tagging can be defined as
-manual indexing on the Web [14]. The specific type of a tagging systems depends
+manual indexing on the Web [14]. The specific type of a tagging system depends
 on several parameters [4,8,14].
 
 In particular, tagging properties include:
 
-source of resources: either supplied by the system or created/collected by users
+* **source of resources**: either supplied by the system or created/collected
+  by users
 
 * **tagging rights**: who is allowed to assign and modify tags?
 
 * **tagging support**: for instance recommendations and visible tag
   descriptions
 
-* **tag aggregation**: either the set-model where a all users collectively tag 
-  an individual resource or the bag-model where each user individually tags a 
+* **tag aggregation**: either the set-model where all users collectively tag 
+  an individual resource or the bag-model where each user individually tags a
   resource
 
 * **tag management**: consisting of restrictions on which tags to use, methods 
@@ -60,7 +61,7 @@ accessible via a public API. Since Stack Overflow was launched in 2008, the
 Stack Exchange network has grown to almost 90 sites with more than 2 million
 questions and more than 4 million answers (as of august 2012). Since 2010 there
 is some academic research about Stack Exchange and papers that make use of the
-data provided by StackExchange sites.[^2] Most of this research is focused on
+data provided by Stack Exchange sites.[^2] Most of this research is focused on
 factors of success, quality and motivation and similar aspects of
 crowdsourcing. The tagging system of each community has not been analyzed yet.
 Up to five tags are assigned to each question by its author. Reuse of existing
@@ -71,16 +72,16 @@ short tag excerpt and a more detailed tag description, both editable in a wiki.
 Hierarchical links between tags are not supported on purpose.[^4] Figure 1 shows
 the info page of a tag with tag excerpt and tag description.
 
-[^1]: See http://stackexchange.com and http://stackoverflow.com.
+[^1]: See <http://stackexchange.com> and <http://stackoverflow.com>.
 
-[^2]: See http://meta.stackoverflow.com/questions/134495 for a bibliography.
+[^2]: See <http://meta.stackoverflow.com/questions/134495> for a bibliography.
 
 [^3]: Editing rights in Stack Exchange are controlled by an elaborated system
 of reputation points. In Stack Overflow 500 points are required for retagging
 and 1500 for creating tags. In beta sites such as libraries.stackexchange,
 levels are 200 and 150 respectively.
 
-[^4]: See http://meta.stackoverflow.com/questions/tagged/tag-hierarchy for
+[^4]: See <http://meta.stackoverflow.com/questions/tagged/tag-hierarchy> for
 discussions.
 
 ## Categories in Wikipedia
@@ -98,7 +99,7 @@ Wikipedia articles and categories translated to SKOS/RDF are provided by
 DBPedia project [2], including mappings from articles to authority files
 [15].[^5]
 
-[^5]: Available at http://dbpedia.org.
+[^5]: Available at <http://dbpedia.org>.
 
 # Knowledge Organization Systems
 
@@ -132,7 +133,7 @@ one concept.
                     skos:closeMatch     equivalence link with low confidence
                     skos:exactMatch     equivalence link with high confidence
 
-Table: Relations between concepts in the SKOS model
+Table: Relations between concepts in the SKOS model\label{table-1}
 
 The relations skos:broader/broaderMatch and skos:narrower/narrowMatch are
 inverse respectively, the other relations are symmetric, and skos:exactMatch is
@@ -149,9 +150,10 @@ of a community. The volunteers make use of tagging not to create a reusable
 folksonomy but as tool for knowledge organization within their project. Because
 of the open and dynamic nature of the projects, nobody is responsible for the
 full tagging terminology. This makes centralized approaches to enrich the
-folksonomy difficult. For this reason additional mapping and linking can best
-be managed within the system of tags and created distributed by crowdsourcing.
-Two methods of seamless integration are presented below.  
+folksonomy difficult.  For this reason additional mapping and linking can best
+be managed within the tagging system. If enrichment is also done by the
+community, it can be crowdsourced together with the folkosonomy. Two methods of
+seamless integration are presented below.  
 
 ## Links from tag names
 
@@ -166,10 +168,10 @@ categories multiple tags exists. Based on this tag naming rules, a formal SKOS
 mapping can be derived with 1-to-1 close/exact matches and 1-to-n
 narrower/broader matches:
 
-[^6]: http://cstheory.stackexchange.com
+[^6]: <http://cstheory.stackexchange.com>
 
-[^7]: The Computing Research Repository (http://arxiv.org/corr) is part of the
-arXiv repository.
+[^7]: The Computing Research Repository (<http://arxiv.org/corr>) is part of
+the arXiv repository.
 
 ~~~~
 [ skos:notation "LO"; 
@@ -203,9 +205,9 @@ in this enrichment, however, is lower than tagging activity because tag
 descriptions are less visible members of the communities. Figure 1 shows the
 tag description of tag `ils`.[^8]
 
-[^8]: Available at http://libraries.stackexchange.com/tags/ils/info.
+[^8]: Available at <http://libraries.stackexchange.com/tags/ils/info>.
 
-![Tag description with hierarchical links and mapping](img/tag-info-ils.png)
+![Tag description with hierarchical links and mapping\label{figure-1}](img/tag-info-ils.png)
 
 The wiki contains HTML links to other tags and links that make use of concepts
 from other knowledge organization systems (Wikipedia, LCSH, JITA
@@ -214,11 +216,11 @@ can be harvested via Stack Exchange API and translated to semantic
 relationships in SKOS. The translation between HTML links in the tag
 description and URIs in the linked system must be configured for each. For
 instance a link to Wikipedia is translated to DBPedia and a link to a Worldcat
-search by LCSH is translated to an URI at http://id.loc.gov. This results in
+search by LCSH is translated to an URI at <http://id.loc.gov>. This results in
 the following concept in SKOS/RDF:[^9]
 
 [^9]: Scripts to download/transform links are available at
-https://github.com/nichtich/se2skos.
+<https://github.com/nichtich/se2skos>.
 
 ~~~~
 <http://libraries.stackexchange.com/tags/ils> a skos:Concept ;
@@ -246,7 +248,7 @@ category description of category “Hörspiel” (radio play). An infobox is use
 show links to corresponding concepts in Regensburger Verbundklassifikation
 (RVK), Dewey Decimal System (DDC), and GND authority file.
 
-![Category description with mappings to other knowledge organization systems](img/kategorie-hoerspiel.png)
+![Category description with mappings to other knowledge organization systems\label{figure-2}](img/kategorie-hoerspiel.png)
 
 Translation of these links to mappings in SKOS is based on the template syntax
 of MediaWiki. If multiple links are specified to the same system, as RVK in the
@@ -287,7 +289,28 @@ which are also used to map GND authority records, Wikipedia and other resources
 [17]. It is shown how links from tag names and tag descriptions can be
 harvested and transformed to concept schemes in SKOS. The resulting knowledge
 organization systems can be used for retrieval, to find related resources, and
-for bibliometric analysis as exemplified in appendix A.
+for bibliometric analysis as exemplified in Table 2.
+
+category papers questions relation  tags
+-------- ------ --------- -------- ---------------------------------------
+ cs.AI      788        42    18.76 ai.artificial-intel
+ cs.CC      421       931     0.45 cc.complexity-theory
+ cs.CG      225       133     1.69 cg.comp-geom
+ cs.CR      485       143     3.39 cr.crypto-security
+ cs.CV      384        11    34.91 cv.computer-vision
+ cs.DB      244        29     8.41 db.databases
+ cs.DC      450        93     4.84 dc.parallel-comp, dc.distributed-comp
+ cs.DS      800       915     0.87 ds.algorithms, ds.data-structures
+ cs.FL      194       150     1.29 fl.formal-languages
+ cs.GT      324        34     9.53 gt.game-theory
+ cs.IT     1692        41    41.27 it.information-theory
+ cs.LG      464        53     8.75 lg.learning
+ cs.LO      567       151     3.75 lg.logic
+ cs.NA      137        15     9.13 na.numerical-analysis
+ cs.NE      150        23     6.52 ne.neural-evol
+ cs.PL      242       122     1.98 pl.programming-languages
+
+Table: Popular cstheory tags mapped to CoRR categories\label{table-2}
 
 # References
 
@@ -309,27 +332,4 @@ for bibliometric analysis as exemplified in appendix A.
 [16] Voss, J.: Collaborative thesaurus tagging the Wikipedia way (2006)\
 [17] Voss, J., Schindler, M., Thiele, C.: Link server aggregation with BEACON. In: International Symposium for Information Science (2011)\
 [18] Zapilko, B., Schaible, J., Mayr, P., Mathiak, B.: TheSoz: A SKOS Representation of the Thesaurus for the Social Sciences. Journal of Semantic Web (2012, to appear)
-
-
-category papers questions relation  tags
--------- ------ --------- -------- ---------------------------------------
- cs.AI      788        42    18.76 ai.artificial-intel
- cs.CC      421       931     0.45 cc.complexity-theory
- cs.CG      225       133     1.69 cg.comp-geom
- cs.CR      485       143     3.39 cr.crypto-security
- cs.CV      384        11    34.91 cv.computer-vision
- cs.DB      244        29     8.41 db.databases
- cs.DC      450        93     4.84 dc.parallel-comp, dc.distributed-comp
- cs.DS      800       915     0.87 ds.algorithms, ds.data-structures
- cs.FL      194       150     1.29 fl.formal-languages
- cs.GT      324        34     9.53 gt.game-theory
- cs.IT     1692        41    41.27 it.information-theory
- cs.LG      464        53     8.75 lg.learning
- cs.LO      567       151     3.75 lg.logic
- cs.NA      137        15     9.13 na.numerical-analysis
- cs.NE      150        23     6.52 ne.neural-evol
- cs.PL      242       122     1.98 pl.programming-languages
-
-
-Appendix A: Popular cstheory tags mapped to CoRR categories
 
