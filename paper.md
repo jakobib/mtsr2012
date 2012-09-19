@@ -7,12 +7,13 @@ With the rise of social software and web applications, social tagging has
 become a popular method to organize collections. Tagging is a process where
 keywords (tags) are manually assigned to a resource for retrieval. In contrast
 to traditional subject indexing, keywords are generally chosen freely by users
-and shared in a community. Many formsand applications of social tagging exist
+and shared in a community. Many forms and applications of social tagging exist
 and are subject to research [4]. The outcome of activities in a tagging system
-is called a folksonomy. This paper presents the tagging systems of Stack
-Exchange and Wikipedia as two popular instances of folksonomies and summarizes
-methods to enrich and interlink these folksonomies with existing knowledge
-organization systems via crowdsourcing.
+is called a folksonomy. This paper first summarizes basic properties of social
+tagging with Stack Exchange and Wikipedia as two popular instances of set-model
+folksonomies. These systems are then compared to knowledge organization systems
+and the enrichment with hierarchical links and mappings to other systems via
+crowdsourcing is demonstrated.
 
 # Social Tagging and Folksonomies
 
@@ -20,37 +21,36 @@ No common definition of social tagging and folksonomies exists among authors
 and disciplines. As terms like social tagging, social indexing, and
 collaborative tagging are used interchangeably, tagging can be defined as
 manual indexing on the Web [14]. The specific type of a tagging system depends
-on several parameters [4,8,14].
+on several parameters [4,8,14].  In particular, tagging properties include:
 
-In particular, tagging properties include:
-
-* **source of resources**: either supplied by the system or created/collected
-  by users
+* **source of resources**: which can either be supplied by the tagging system
+  or created/collected by its users
 
 * **tagging rights**: who is allowed to assign and modify tags?
 
 * **tagging support**: for instance recommendations and visible tag
   descriptions
 
-* **tag aggregation**: either the set-model where all users collectively tag 
-  an individual resource or the bag-model where each user individually tags a
-  resource
+* **tag aggregation**: set-model where all users collectively tag a
+  resource or bag-model where each user individually tags a resource.
 
-* **tag management**: consisting of restrictions on which tags to use, methods 
-  of creation and description of tags independent from the action of tagging 
-  etc.
+* **tag management**: restrictions on which tags to use, methods of creation
+  and description of tags independent from the action of tagging, etc.
 
-* **tag connectivity**: by hierarchical and other relationships between tags
+* **tag connectivity**: hierarchical and other relationships between tags
 
-Most research on tagging systems focuses on bag-model tag aggregation. In these
-systems folksonomies emerge as implicit consensus from numbers. Several
-approaches exist to derive folksonomies from tagging data by statistical
-analysis, including tag connectivity [1,5,7,10,11,12]. With set-model tag
-aggregation the folksonomy is more directly given as snapshot of community
-consensus. Folksonomies expressed in these tagging systems can be defined as
-dynamic knowledge organization systems created by communities of distributed
-volunteers. Two popular instances are presented in the following with tags in
-Stack Exchange and categories in Wikipedia. 
+Most research on tagging systems focuses on bag-model tag aggregation. This
+means that each resource can be tagged multiple times and every user can choose
+his individual set of tags to describe the resource.  Folksonomies in bag-model
+tagging systems emerge as implicit consensus from large numbers of tagging
+events. Several approaches exist to derive folksonomies from tagging data by
+statistical analysis, including tag connectivity [1,5,7,10,11,12].  With
+Set-model tag aggregation in contrast there is only one common set of tags for
+each resource.  Hence, the folksonomy is more directly given as snapshot of
+community consensus. Folksonomies expressed in set-model tagging systems can be
+defined as dynamic knowledge organization systems created by communities of
+distributed volunteers. Two popular instances are presented in the following
+with tags in Stack Exchange and categories in Wikipedia. 
 
 ## Tags in Stack Exchange
 
@@ -58,19 +58,19 @@ Stack Exchange is a growing network of question & answers communities with
 Stack Overflow as first and most prominent instance.[^1] All content is
 licensed under Creative Commons Attribution Share Alike license (CC BY-SA) and
 accessible via a public API. Since Stack Overflow was launched in 2008, the
-Stack Exchange network has grown to almost 90 sites with more than 2 million
-questions and more than 4 million answers (as of august 2012). Since 2010 there
-is some academic research about Stack Exchange and papers that make use of the
-data provided by Stack Exchange sites.[^2] Most of this research is focused on
-factors of success, quality and motivation and similar aspects of
-crowdsourcing. The tagging system of each community has not been analyzed yet.
-Up to five tags are assigned to each question by its author. Reuse of existing
-tags is encouraged by typeahead suggestions and by limiting creation of new
-tags to experienced members of the community. Users with some reputation can
-also modify the tag-set of any question.[^3] Each tag can be defined with a
+Stack Exchange network has grown to almost 90 sites with 2 million users, 5
+million questions, and 9 million answers (as of autum 2012). Since 2010 there
+is some academic research about Stack Exchange and the data that is provided by
+Stack Exchange sites.[^2] Most of this research is focused on factors of
+success, quality and motivation and similar aspects of crowdsourcing. The
+tagging system of each community has not been analyzed yet.  In Stack Exchange
+sites up to five tags are assigned to each question by its author. Reuse of
+existing tags is encouraged by typeahead suggestions and by limiting creation
+of new tags to experienced members of the community. Users with some reputation
+can also modify the tag-set of any question.[^3] Each tag can be defined with a
 short tag excerpt and a more detailed tag description, both editable in a wiki.
-Hierarchical links between tags are not supported on purpose.[^4] Figure 1 shows
-the info page of a tag with tag excerpt and tag description.
+Hierarchical links between tags are not supported on purpose.[^4] Figure 1
+shows the extended info page of a tag with its tag excerpt and tag description.
 
 [^1]: See <http://stackexchange.com> and <http://stackoverflow.com>.
 
@@ -78,16 +78,15 @@ the info page of a tag with tag excerpt and tag description.
 
 [^3]: Editing rights in Stack Exchange are controlled by an elaborated system
 of reputation points. In Stack Overflow 500 points are required for retagging
-and 1500 for creating tags. In beta sites such as libraries.stackexchange,
-levels are 200 and 150 respectively.
+and 1500 for creating tags. In beta sites levels are 200 and 150 respectively.
 
 [^4]: See <http://meta.stackoverflow.com/questions/tagged/tag-hierarchy> for
-discussions.
+discussion of the decision against tag (mono)hierarchies.
 
 ## Categories in Wikipedia
 
 In Wikipedia articles are tagged by so called categories, which can be assigned
-and modified together with the normal content of an article. Categories are
+and modified together with the normal content of an article.[^wpcat] Categories are
 used for knowledge organization and for quality management, for instance to
 flag articles that lack references. Each category is described with a wiki page
 of its own. Category pages can be assigned to other categories, resulting in a
@@ -98,6 +97,8 @@ articles in Wikipedia can be used as concepts for knowledge organization.
 Wikipedia articles and categories translated to SKOS/RDF are provided by
 DBPedia project [2], including mappings from articles to authority files
 [15].[^5]
+
+[^wpcat]: See <http://en.wikipedia.org/wiki/Wikipedia:Categorization>.
 
 [^5]: Available at <http://dbpedia.org>.
 
@@ -323,7 +324,7 @@ Table: Popular cstheory tags mapped to CoRR categories\label{table-2}
 [7] Lin, H., Davis, J., Zhou, Y.: An integrated approach to extracting ontological structures from folksonomies. In: ESWC 2009, pp. 654-668 (2009)\
 [8] Marlow, C., Davis, M., Boyd, D.: HT06, tagging paper, taxonomy, Flickr, academic article, ToRead. In: Proceedings of Hypertext 2006 (2006)\
 [9] Mayr, P., Petras, V.: Cross-concordances: Terminology mapping and its effectiveness for information retrieval. In: 74th IFLA World Library and Information Congress (2008)\
-[10] Moosavi, A., Li, T., Lakshmanan, L., Pottinger, R.: ONTECTAS: Bridging the Gap Between Collaborative Tagging Systems and Structured Data. In: International Conference on Advanced Information System Engineering (CAiSE) pp. 436-451 (2011)\
+[10] Moosavi, A., Li, T., Lakshmanan, L., Pottinger, R.: ONTECTAS: Bridging the Gap Between Collaborative Tagging Systems and Structured Data. In: CAiSE conference, pp. 436-451 (2011)\
 [11] Solskinnsbakk, G., Gulla, J.A.: A Hybrid Approach to Constructing Tag Hierarchies. In: OTM Conferences, pp. 975-982 (2010)\
 [12] Specia, L., Motta, E.: Integrating folksonomies with the semantic web. In: Proceedings of the ESWC 2007, pp. 624-639, Springer (2007)\
 [13] Tudhope, D., Koch, T.: New Applications of Knowledge Organization Systems: introduction to a special issue. Journal of Digital Information, 4 (2006)\
