@@ -24,7 +24,7 @@ htmlpaper:
 	@pandoc -N paper.md -o paper.html ${BIB} ${TPHTM}
 
 pdfpaper: clean
-	./filters/texrefs.pl paper.md | pandoc -N -t latex ${BIB} ${TPPDF} | filters/umlauts.pl > paper.tex
+	./filters/texrefs.pl paper.md | pandoc -N -t latex ${BIB} ${TPPDF} > paper.tex
 	@pdflatex paper
 #	@bibtex paper
 	@pdflatex paper
@@ -33,3 +33,4 @@ pdfpaper: clean
 clean:
 	@rm -f *.aux *.log *.out *.bbl *.blg
 
+paper: htmlpaper pdfpaper
