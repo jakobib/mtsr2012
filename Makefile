@@ -1,3 +1,10 @@
+include make/Makefile
+
+V_SLIDES_PDF=-V template:Madrid -V colortheme:dolphin
+
+
+# This depreceated:
+
 TSPDF=--template templates/slides.tex -V template:Madrid -V colortheme:dolphin
 
 ABSTRACT=$(shell cat abstract)
@@ -12,13 +19,8 @@ TPPDF=--template templates/paper.tex -V documentclass:llncs --include-before-bod
 #BIB=--bibliography=bibliography.bib --csl templates/lncs.csl
 BIB=
 
-pdfslides:
-	@rm -f tmp.*
-	pandoc slides.md --slide-level 2 --toc -t beamer -o tmp.tex ${TSPDF} 
-	@perl -p -i -e 's/^\\caption{}//' tmp.tex
-	@pdflatex tmp.tex > /dev/null
-	@pdflatex tmp.tex > /dev/null
-	@mv tmp.pdf slides.pdf
+# TODO: Use Pandoc citations and replace them to BibTeX citations for LaTeX:
+#  sed 's/\[@\([^]]*\)\]/\\cite{\1}/g' # plus remove '@'
 
 htmlpaper:
 	@pandoc -N paper.md -o paper.html ${BIB} ${TPHTM}
@@ -29,8 +31,5 @@ pdfpaper: clean
 #	@bibtex paper
 	@pdflatex paper
 #	@./filters/texrefs.pl paper.md | pandoc -N -o paper.pdf ${TPPDF}
-
-clean:
-	@rm -f *.aux *.log *.out *.bbl *.blg
 
 paper: htmlpaper pdfpaper
