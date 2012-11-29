@@ -2,22 +2,23 @@
 
 ## Social Tagging
 
-* Keywords/tags manually assigned to resources by\
-  members of a community of distributed volunteers
-* Freely chosen tags (or easy to create new)
+* Keywords/tags manually assigned to documents by\
+  members of a distributed community of volunteers
+* Tags freely chosen (or easy to create new)
 * Outcome of tagging activity in a tagging system:\
-  **Folksonomy**
+  *Folksonomy*
 
 ## Properties of Social Tagging
 
 * Tagging systems are very dynamic\
-  --- especially compared to normal KOS
-* Different types of tagging systems exist\
-  --- don't compare apples and oranges
+  --- *especially compared to normal KOS*
+* Different types of tagging systems exist:\
+  --- *don't compare apples and oranges!*
 
       * source of resources
 	  * tagging rights, tagging support, tag management
-	  * *tag aggregation*, *tag connectivity*
+	  * *tag aggregation*
+	  * *tag connectivity*
 
 ## Tag aggregation: Bag-Model
 
@@ -49,21 +50,53 @@ created by communities of distributed volunteers*
 
 # Wikipedia and Stack Exchange
 
-...
+## Categories in Wikipedia
+
+![](img/wpcategory.png)
+
+----
+
+<!-- 
+http://en.wikipedia.org/wiki/Special:CategoryTree
+http://meta.wikimedia.org/wiki/User:Dapete/Catgraph 
+-->
+
+![](img/wpcattree.png)
+
+![](img/wpcatgraph.png)
+
+Wikipedia category folksonomy is a thesaurus
+
+## Tags in Stack Exchange
+
+![](img/se-tags.png)
+
+* tags in a question
+* anyone can edit tags (after a while)
+* Folksonomy is a flat file of keywords (with some synonyms)
 
 # Linking to KOS
 
 ## Knowledge Organization Systems (KOS)
 
-* ... (TODO) ...
-* SKOS
+* Classifications, thesauri, taxonomies, authority files...
+* Common model of KOS for exchange and interlinking:\
+  Simple Knowledge Organization System (SKOS)
 
-## Linking
+## Linking and enrichement
 
-* directy given?
+* Mappings to other KOS
+* add hierarchical links to flat keywords
+
 * harvesting
-* feedback to the community (TODO: image)
+* rarely directy given (cs.stackexchange)
+* intellectual analysis
+* feedback to the community (TODO: image)!
 * ...
+
+## Simple one-to-one
+
+![](img/cstheory-tags.png)
 
 ## Harvesting
 
@@ -73,13 +106,44 @@ created by communities of distributed volunteers*
 
 ![](img/feedback.png)
 
-## Results
+## Put the enrichment and mapping into the community
+
+* Feedback with additional benefit: find related documents 
+* One must be able to directly link to a rich collected of 
+  documents indexed with the concept notation/identifier of each KOS
+
+## Enrichtment of tag description in Wikipedia
+
+![](img/kategorie-hoerspiel-slide.png)
+
+## Enrichtment of tag description in Stack Exchange
+
+![](img/tag-info-ils-slide.png)
+
+# Results
+
+## What I've done
 
 * BEACON files (TODO: put here)
 * ...
 
+## hierarchical links
+
+![](img/libraries-graph.png)
+
+## Links in SKOS/RDF
+
+* ...
+
+## Links as BEACON files
+
+* beacon file here
+
+
 ## Outcome and Benefits
 
+* Compare collections 
+* SHow related documents (guide people from communities to collections)
 * ...
 * Collection analysis (see cstheory vs arxiv)
 * Catalog enrichment
@@ -87,10 +151,12 @@ created by communities of distributed volunteers*
 
 # Summary
 
-# References
-
-----
+## References
 
 * Scripts and data harvested available at\
   <http://github.com/nichtich/se2skos>.
+* Source of paper and slides available at\
+  <http://github.com/jakobib/mtsr2012>.
+* Both Wikipedia and Stack Exchange data available
+  under CC-BY-SA accessible via open APIs.
 * Icons CC-BY based on [picol.org](http://picol.org)
